@@ -1,37 +1,26 @@
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { HelloCard } from "@/components/cards/HelloCard";
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
+import { DocumentationCard } from "@/components/documentation/DocumentationCard";
 
 const Index = () => {
   const { toast } = useToast();
-  const [name, setName] = useState("Friend");
   
-  const handleHelloClick = () => {
+  const handleViewDocsClick = () => {
     toast({
-      title: "Hello!",
-      description: `Nice to meet you, ${name}!`,
+      title: "Documentation",
+      description: "Full documentation site coming soon!",
       duration: 3000,
     });
-    
-    // Cycle through different names
-    if (name === "Friend") setName("Developer");
-    else if (name === "Developer") setName("Designer");
-    else if (name === "Designer") setName("Team");
-    else setName("Friend");
   };
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-4">
-      <HelloCard 
-        name={name}
-        message="Welcome to your application! Click the button below to say hello."
-        onButtonClick={handleHelloClick}
-      />
+      <DocumentationCard onButtonClick={handleViewDocsClick} />
       
-      <div className="mt-8 animate-bounce">
+      <div className="mt-8">
         <Link to="/dashboard">
           <Button className="bg-primary hover:bg-primary/90">
             View Dashboard
