@@ -283,7 +283,7 @@ const Dashboard = () => {
                 </CardHeader>
                 <CardContent className="p-4 sm:p-6">
                   <div className="h-60 sm:h-80">
-                    <ResponsiveContainer width="100%" height="100%">
+                    <ChartContainer config={chartConfig} className="h-full">
                       <AreaChart data={revenueData}>
                         <defs>
                           <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
@@ -306,7 +306,7 @@ const Dashboard = () => {
                           animationDuration={1500}
                         />
                       </AreaChart>
-                    </ResponsiveContainer>
+                    </ChartContainer>
                   </div>
                 </CardContent>
               </Card>
@@ -318,7 +318,7 @@ const Dashboard = () => {
                 </CardHeader>
                 <CardContent className="p-4 sm:p-6">
                   <div className="h-60 sm:h-80">
-                    <ResponsiveContainer width="100%" height="100%">
+                    <ChartContainer config={chartConfig} className="h-full">
                       <LineChart data={usersData}>
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis dataKey="name" />
@@ -336,7 +336,7 @@ const Dashboard = () => {
                           animationDuration={1500}
                         />
                       </LineChart>
-                    </ResponsiveContainer>
+                    </ChartContainer>
                   </div>
                 </CardContent>
               </Card>
@@ -350,7 +350,7 @@ const Dashboard = () => {
                 </CardHeader>
                 <CardContent className="p-4 sm:p-6">
                   <div className="h-60 sm:h-80">
-                    <ResponsiveContainer width="100%" height="100%">
+                    <ChartContainer config={chartConfig} className="h-full">
                       <BarChart data={salesData}>
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis dataKey="name" />
@@ -365,7 +365,7 @@ const Dashboard = () => {
                           animationDuration={1500}
                         />
                       </BarChart>
-                    </ResponsiveContainer>
+                    </ChartContainer>
                   </div>
                 </CardContent>
               </Card>
@@ -377,7 +377,7 @@ const Dashboard = () => {
                 </CardHeader>
                 <CardContent className="p-4 sm:p-6">
                   <div className="h-60 sm:h-80">
-                    <ResponsiveContainer width="100%" height="100%">
+                    <ChartContainer config={chartConfig} className="h-full">
                       <PieChart>
                         <ChartTooltip 
                           content={<ChartTooltipContent />} 
@@ -399,7 +399,7 @@ const Dashboard = () => {
                         </Pie>
                         <ChartLegend content={<ChartLegendContent />} />
                       </PieChart>
-                    </ResponsiveContainer>
+                    </ChartContainer>
                   </div>
                 </CardContent>
               </Card>
